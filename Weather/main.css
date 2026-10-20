@@ -1,8 +1,47 @@
+@property --bg-top {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #22C1D3;
+}
+
+@property --bg-bottom {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #DBDBDB;
+}
+
+html {
+    --bg-top: #22C1D3;
+    --bg-bottom: #DBDBDB;
+
+    transition: --bg-top 1s ease, --bg-bottom 1s ease;
+}
+
+html[data-time="morning"] {
+    --bg-top: #B591CE;
+    --bg-bottom: #D98133;
+}
+
+html[data-time="day"] {
+    --bg-top: #22C1D3;
+    --bg-bottom: #DBDBDB;
+}
+
+html[data-time="evening"] {
+    --bg-top: #785AB3;
+    --bg-bottom: #D36C22;
+}
+
+html[data-time="night"] {
+    --bg-top: #414141;
+    --bg-bottom: #2231D3;
+}
+
 html,
 body {
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(180deg, #22C1D3 0%, #DBDBDB 100%);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -51,12 +90,24 @@ body {
     opacity: 1;
 }
 
-.main-text[data-weather="partly"]::before {
-    background: url("SunCloud.png") right top / contain no-repeat;
-    opacity: 1;
-}
 .main-text[data-weather="cloudy"] .box1::before {
     opacity: 1;
+}
+
+.main-text[data-weather="rain"] .box1::before {
+    background-image: url("Rain.png");
+    opacity: 1;
+    height: 650px;
+    bottom: -280px;
+}
+
+
+.main-text[data-weather="thunder"] .box1::before {
+    background-image: url("Thunder.png");
+    opacity: 1;
+    height: 650px;
+    bottom: -280px;
+
 }
 
 .main-text h1 {
@@ -157,6 +208,26 @@ body {
 
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+
+.box1::after {
+    content: "";
+    position: absolute;
+    right: -90px;
+    bottom: 20px;
+    width: 1450px;
+    height: 700px;
+    z-index: -1;
+    pointer-events: none;
+
+    background: url("SunCloud.png") right bottom / contain no-repeat;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.main-text[data-weather="partly"] .box1::after {
+    opacity: 1;
 }
 
 .hourly {
