@@ -1,0 +1,8 @@
+Tagad gradi - ir
+Min-Max temp - ir
+Feel like temp - ir 
+Gaisa Mitrums - ir
+Redzamiba - ir
+vejs - ir
+7 day forecast - ir
+Hourly forecast - ir

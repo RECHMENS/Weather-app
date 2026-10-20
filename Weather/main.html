@@ -14,13 +14,37 @@
 
 <body>
 
-<div class="main-text">
-    <h1>Todays Weather</h1>
-    <h1 class="temperature-main">25</h1>
-    <h2 class="temperature-feel">Feels like</h2>
-    <h2 class="temperature-high">High</h2>
-    <h2 class="temperature-low">Low</h2>
-</div>
+    <div class="main-text">
+        <div class="title-row">
+            <h1>Today's Weather in</h1>
+            <input id="city" class="location-box" type="text" placeholder="Enter city">
+        </div>
+    
+        <div class="temperature-row">
+            <div id="temp" class="temperature-main">25°C</div>
+            <div id="feel" class="temperature-feel">Feels like 28°C</div>
+        </div>
+        
+        <div id="high" class="temperature-high">High 28°C</div>
+        <div id="low" class="temperature-low">Low 24°C</div>
+
+
+        <div class="box1">
+            <div class="hourly"><h1>Hourly Forecast</h1></div>
+        </div>
+        
+        <div class="row">
+            <div class="box2">
+                <div class="days"><h1>7 Day forecast</h1></div>
+            </div>
+            
+            <div class="circle-row">
+                <div class="circle"><h1>Wind<br><span id="wind"></span></h1></div>
+                <div class="circle"><h1>Humidity<br><span id="humidity"></span></h1></div>
+                <div class="circle"><h1>Pressure<br><span id="pressure"></span></h1></div>
+            </div>
+        </div>
+    </div>
 
 <script src="main.js"></script>
 
